@@ -1,0 +1,152 @@
+body{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    background: #ddd7d7;
+    font-family: 'Poppins', sans-serif;
+}
+
+a{
+    text-decoration: none;
+    color: #fff;
+}
+
+.div-outer{
+    width: 100%;
+    max-width: 1920px;
+}
+
+
+.chatbot-header{
+    display: flex;
+    position: relative;
+    justify-content: start;
+    align-items: center;
+    background: #553939;
+    height: 60px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.chatbot-header h1{
+    font-size: 25px;
+    color: #fff;
+    margin: 0 160px;
+}
+
+.chatbot-body{
+    padding: 10px 25px;
+    display: flex;
+    justify-content: space-around;
+    padding: 50px 0;
+}
+
+.chatbot-input{
+    margin-top: 100px;
+}
+
+.chatbot-input p:first-of-type{
+    font-size: 20px;
+}
+
+.chatbot-input textarea{
+    padding: 10px;
+    min-height: 40px;
+    max-height: 150px; 
+    max-width: 650px;
+    min-width: 400px;
+    border-color: #815B5B;
+    border-width: 2px;
+    border-radius: 5px;
+    background: #ddd7d7;
+    outline: none;
+}
+
+.chatbot-input textarea:focus, input:focus{
+    border-color: #261b1b;
+}
+
+.chatbot-input button{
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #815B5B;
+    font-weight: 600;
+    padding: 15px;
+    margin: 5px 0;
+    background-color: transparent;
+    transition: .3s;
+    border: 2px solid #815B5B;
+    border-radius: 5px;
+}
+
+.chatbot-input button:hover{
+    cursor: pointer;
+    background-color: #815B5B;
+    color: #fff;
+    transition: .3s;
+}
+
+.chatbot-rec{
+    width: 400px;
+    min-height: 600px;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    background-color: #815B5B;
+    border-radius: 20px;
+    padding: 20px;
+    font-size: 22px;
+    color: #fff;
+    transition: .4s;
+}
+
+.chatbot-header img{
+    width: 65px;
+    height: 65px;
+    position: absolute;
+    left: 85px;
+    top: 3px;
+}
+
+.chatbot-header .chatbot-list{
+    display: flex;
+    width: auto;
+    height: 100%;
+    align-items: center;
+    list-style: none;
+    margin: 0 0 0 150px;
+    padding: 0;
+}
+
+.chatbot-header .chatbot-list li{
+    display: flex;
+    position: relative;
+    padding: 0 20px;
+    margin: 0 20px;
+    justify-content: center;
+    align-items: center;
+    height: 70%;
+    color: #fff;
+    cursor: pointer;
+}
+
+.chatbot-header .chatbot-list li::after{
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 2px;
+    background: #fff;
+    transition: .4s;
+    bottom: 0;
+    right: 0;
+}
+
+.chatbot-header .chatbot-list li:hover::after{
+    width: 100%;
+    left: 0;
+    transition: .4s;
+}
+

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Contact Us</title>
+  <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/contact_us.css') }}">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="div-outer">
+      <div class="chatbot-header">
+          <img src="{{ url_for('static', filename='my_image.png') }}" alt="My Image">
+          <h1>Meal Recommendation Chatbot</h1>
+          <ul class="chatbot-list">
+              <li>Home</li>
+              <li>About Us</li> 
+              <li><a href="./contact_us.html" class="contact-link">Contact Us</a></li>
+          </ul>   
+      </div>
+
+      <div class="content">
+        <h1>Contact Us</h1>
+        <form>
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required><br>
+    
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required><br>
+    
+          <label for="message">Message:</label><br>
+          <textarea id="message" name="message" rows="5" cols="30" required></textarea><br>
+    
+          <input type="submit" value="Submit">
+        </form>
+      </div>
+    </div>
+</body>
+</html>

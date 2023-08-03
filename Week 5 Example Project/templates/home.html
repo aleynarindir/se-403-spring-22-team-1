@@ -1,0 +1,51 @@
+<!-- templates/index.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Meal Recommendation Chatbot</title>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/home.css') }}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="div-outer">
+        <div class="chatbot-header">
+            <img src="{{ url_for('static', filename='my_image.png') }}" alt="My Image">
+            <h1>Meal Recommendation Chatbot</h1>
+            <ul class="chatbot-list">
+                <li>Home</li>
+                <li>About Us</li> 
+                <li><a href="./contact_us.html" class="contact-link">Contact Us</a></li>
+            </ul>   
+        </div>
+        <div class="chatbot-body">
+            <div class="chatbot-input">
+                <p>Hi, how can I help you ?</p>
+                <textarea id="user-input"></textarea>
+                <button onclick="getMealRecommendations()">Send The Input</button>
+            </div>
+            <div class="chatbot-rec" id="meal-recommendations">
+            </div>
+        </div>
+    </div>
+    <script>
+        // Function to send user input to Flask endpoint and get meal recommendations
+        function getMealRecommendations() {
+            var user_input = $('#user-input').val();
+            $.post('/get_meal_recommendations', { user_input: user_input }, function(data) {
+                var meal_recommendations = data.meal_recommendations;
+                var meal_recommendations_html = "";
+                for (var i = 0; i < meal_recommendations.length; i++) {
+                    meal_recommendations_html += "<p>" + meal_recommendations[i] + "</p>";
+                }
+                $('#meal-recommendations').html(meal_recommendations_html);
+            });
+        }
+    </script>
+</body>
+</html>
